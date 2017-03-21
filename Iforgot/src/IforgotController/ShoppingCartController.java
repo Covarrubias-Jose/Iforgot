@@ -34,23 +34,23 @@ public class ShoppingCartController implements Serializable{
         Scanner itemNum = new Scanner(System.in);
         int itemNumIs = itemNum.nextInt();
 
-        ShoppingCartModel loadCart = new ShoppingCartModel();
+    ShoppingCartModel loadCart = new ShoppingCartModel();
 
-        loadCart.setShoppingListName(nameListIs);
-        String lista=loadCart.getShoppingListName().toUpperCase();
+            loadCart.setShoppingListName(nameListIs);
+            String lista=loadCart.getShoppingListName().toUpperCase();
 
-        loadCart.setItem(nameItemIs);
-        String cosa=loadCart.getItem().toUpperCase();
+            loadCart.setItem(nameItemIs);
+            String cosa=loadCart.getItem().toUpperCase();
 
-        loadCart.setHowMany(itemNumIs);
-        int cuanto= loadCart.getHowMany();
-        
+            loadCart.setHowMany(itemNumIs);
+            int cuanto= loadCart.getHowMany();
+
         Map itemsInList = new HashMap();
         itemsInList.put(cosa, cuanto);
         itemsInList.keySet();
-        System.out.println("CART "+itemsInList.entrySet());
+//        System.out.println("CART "+itemsInList.entrySet());
 
-        ShoppingCartView ViewMycartName = new ShoppingCartView(); 
+    ShoppingCartView ViewMycartName = new ShoppingCartView(); 
         
         ViewMycartName.ShoppingCartName(lista);
         ViewMycartName.ShoppingCartItem(cosa);
