@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+-->
+<html lang="en-us">
+<head>
+<title>Testing my JSON script on the Iforgot app</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+    <h2>Here a line with my JSON values should show.</h2>
+    <p id="testJson"> </p>
+
+<script>
+    var myJSON = '{ "list":"Fiesta", "item":"soda", "Quant":4 }';
+    var jsonobject = JSON.parse(myJSON);
+    document.getElementById("testJson").innerHTML=jsonobject.list +", "+jsonobject.item;       
+
+</script>
+        
+        
+<div> 
+</div>
+</body>
+</html>
