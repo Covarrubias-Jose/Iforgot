@@ -8,14 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-        <h2>Here a line with my JSON values should show.</h2>
+        <h3>Receiving data, parsing it to JavaScript object.</h3>
         <p id="testJson"> </p>
         <hr>
         <h3>Store and retrieve data.</h3>
         <p id="otherJSON"> </p>
         <hr>
-        <p id="JSONarrays"></p>
+        <h3>JSON object</h3>
+        <p id="JSONobj"></p>
         <hr>
+        <h3>JSON arrays</h3>
+        <p id="JSONarray"></p>
+        <p id="arrayLoop"></p>
 
     
     
@@ -56,9 +60,24 @@
                     "Person Origen: "+obj.city;
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-
- var e = {"employee":{ "name":"John", "age":30, "city":"Arizona" }}
-        document.getElementById("JSONarrays").innerHTML =e.employee.city;
+        // This is a JSON object "employee" with some attributes and values. 
+     var e = {"employee":{ "name":"John", "age":30, "city":"Arizona" }}
+            document.getElementById("JSONobj").innerHTML =
+                    e.employee.name+" from "+e.employee.city;
+        // JSON arrays
+     var array = {"fruits" : ["apple","orange","banana"]}
+            // Access the array by using the ibndex value with the []
+            document.getElementById("JSONarray").innerHTML = array.fruits[1];
+            
+            // Or with loops
+            // This variable is needed to create a blank space for the array values
+            var x="";
+            for (i in array.fruits){
+                x += array.fruits[i]+", ";
+            }
+            document.getElementById("arrayLoop").innerHTML = x;
+            
+            
     
 </script>
         
