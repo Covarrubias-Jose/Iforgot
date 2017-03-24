@@ -3,21 +3,63 @@
 -->
 <html lang="en-us">
 <head>
-<title>Testing my JSON script on the Iforgot app</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing my JSON script on the Iforgot app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+        <h2>Here a line with my JSON values should show.</h2>
+        <p id="testJson"> </p>
+        <hr>
+        <h3>Store and retrieve data.</h3>
+        <p id="otherJSON"> </p>
+        <hr>
+        <p id="JSONarrays"></p>
+        <hr>
 
-
-    <h2>Here a line with my JSON values should show.</h2>
-    <p id="testJson"> </p>
-
-<script>
+    
+    
+<script>//we run this script on a browser
+    
+    // This is an example of receiving data and converting it to javaScript object.
+    // First, declare a variable to store the incoming data.
     var myJSON = '{ "list":"Fiesta", "item":"soda", "Quant":4 }';
-    var jsonobject = JSON.parse(myJSON);
-    document.getElementById("testJson").innerHTML=jsonobject.list +", "+jsonobject.item;       
+    // this is a javaScript built in function to convert string into javaScript object
+    // JSON.parse(); we have to pass the json text data into a new variable, JsonObject
+    var JsonObject = JSON.parse(myJSON);
+    // you can access any of the values in the object by calling the variable's name and 
+    // then use the "." to get the element you want and the value will be requested. 
+    // Then, using the javaScript we can manipulate the data and use it as we wish.
+    // Here I'm passing the values of "list" and "item" to the paragraph above with the 
+    // getElementById method of javaScript. 
+    document.getElementById("testJson").innerHTML=
+                "List name: "+JsonObject.list+"<br>"+
+                "Item name: "+JsonObject.item+"<br>"+
+                "Number of items: "+JsonObject.Quant;
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+        // I copy the script below from w3scools.com 
+        // It shows how to store data and retrieve it. 
+    var myObj, myJSON, text, obj;
 
+        //Storing data:
+        myObj = { "name":"John", "age":31, "city":"New York" };
+        myJSON = JSON.stringify(myObj);
+        localStorage.setItem("storeJSON", myJSON);
+
+        //Retrieving data:
+        text = localStorage.getItem("storeJSON");
+        obj = JSON.parse(text);
+        document.getElementById("otherJSON").innerHTML = 
+                    "Person name: "+obj.name+"<br>"+
+                    "Person age: "+obj.age+"<br>"+
+                    "Person Origen: "+obj.city;
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+ var e = {"employee":{ "name":"John", "age":30, "city":"Arizona" }}
+        document.getElementById("JSONarrays").innerHTML =e.employee.city;
+    
 </script>
         
         
