@@ -1,6 +1,5 @@
+
 <!DOCTYPE html>
-<!--
--->
 <html lang="en-us">
 <head>
     <title>Testing my JSON script on the Iforgot app</title>
@@ -8,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-        <h3>Receiving data, parsing it to JavaScript object.</h3>
+    <h3>Receiving data, parsing it to JavaScript object.<br>
+        Using the JSON.parse(); method.
+    </h3>
         <p id="testJson"> </p>
         <hr>
         <h3>Store and retrieve data.</h3>
@@ -19,10 +20,9 @@
         <hr>
         <h3>JSON arrays</h3>
         <p id="JSONarray"></p>
+        <h3>Array loop</h3>
         <p id="arrayLoop"></p>
 
-    
-    
 <script>//we run this script on a browser
     
     // This is an example of receiving data and converting it to javaScript object.
@@ -66,17 +66,19 @@
                     e.employee.name+" from "+e.employee.city;
         // JSON arrays
      var array = {"fruits" : ["apple","orange","banana"]}
-            // Access the array by using the ibndex value with the []
+            // Access the array by using the index value with the []
             document.getElementById("JSONarray").innerHTML = array.fruits[1];
             
             // Or with loops
             // This variable is needed to create a blank space for the array values
-            var x="";
+            var x = "";
+            // This is a "for-in" loop
             for (i in array.fruits){
                 x += array.fruits[i]+", ";
             }
             document.getElementById("arrayLoop").innerHTML = x;
-            
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////           
             
     
 </script>
