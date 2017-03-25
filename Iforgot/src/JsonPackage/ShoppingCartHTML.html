@@ -22,6 +22,11 @@
         <p id="JSONarray"></p>
         <h3>Array loop</h3>
         <p id="arrayLoop"></p>
+        <hr>
+        <h3>Now converting a JavaScript object into string using<br>
+            the JSON.stringify(); method.
+        </h3>
+        <p id="string"></p>
 
 <script>//we run this script on a browser
     
@@ -61,11 +66,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
         // This is a JSON object "employee" with some attributes and values. 
-     var e = {"employee":{ "name":"John", "age":30, "city":"Arizona" }}
+     var e = {"employee":{ "name":"John", "age":30, "city":"Arizona" }};
             document.getElementById("JSONobj").innerHTML =
                     e.employee.name+" from "+e.employee.city;
         // JSON arrays
-     var array = {"fruits" : ["apple","orange","banana"]}
+     var array = {"fruits" : ["apple","orange","banana"]};
             // Access the array by using the index value with the []
             document.getElementById("JSONarray").innerHTML = array.fruits[1];
             
@@ -79,7 +84,12 @@
             document.getElementById("arrayLoop").innerHTML = x;
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////           
-            
+    // Here I will use the JSON.stringify(); to convert a JavaScript object to string
+    // so it can be send to a server as plain text.
+    var JSobject = { "season":"Spring", "temperature":82, "location":"AZ" };
+    // If I don't use this method the object is not even transferable. 
+    var stringIt = JSON.stringify(JSobject);
+    document.getElementById("string").innerHTML= stringIt;
     
 </script>
         
