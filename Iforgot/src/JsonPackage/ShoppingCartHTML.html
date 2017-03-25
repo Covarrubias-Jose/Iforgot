@@ -72,7 +72,9 @@
             document.getElementById("JSONobj").innerHTML =
                     e.employee.name+" from "+e.employee.city;
         // JSON arrays
-     var array = {"fruits" : ["apple","orange","banana"]};
+     var array = {"fruits" : ["apple","orange","banana"],
+            // Because I added a come I could create a nested array.
+            "stones":["marble","granite","limestone"]};
             // Access the array by using the index value with the []
             document.getElementById("JSONarray").innerHTML = array.fruits[1];
             
@@ -87,8 +89,8 @@
             
             // We can also use the "for loop" 
             var z = "";
-            for (i = 0; i < array.fruits.length; i++) {
-                z += array.fruits[i] + "<br>";
+            for (i = 0; i < array.stones.length; i++) {
+                z += array.stones[i] + "<br>";
             }
             document.getElementById("forLoop").innerHTML = z;
 //////////////////////////////////////////////////////////////////////////////////////////
