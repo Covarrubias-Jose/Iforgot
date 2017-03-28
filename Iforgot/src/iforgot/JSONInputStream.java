@@ -3,23 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package IforgotController;
+package iforgot;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import java.io.InputStream;
 
 /**
  *
  * @author josecovarrubias
  */
-public class ShoppingCartControllerTest {
-    
-    public ShoppingCartControllerTest() {
-    }
+class JSONInputStream {
 
-    @Test
-    public void testSomeMethod() {
-        
+    JSONInputStream(InputStream inputStream) {
     }
     
 }
