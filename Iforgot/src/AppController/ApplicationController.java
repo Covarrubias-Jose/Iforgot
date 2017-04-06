@@ -13,7 +13,8 @@ import IforgotView.ShoppingCartView;
  * @author josecovarrubias
  */
 public class ApplicationController {
-    
+    // This function will use the view model to solve the logic 
+    // of what the controll model should do at the begining of the app.
     public String start(){
     ShoppingCartView startApp = new ShoppingCartView();
         String selection = startApp.newOrOldCart().toUpperCase();
