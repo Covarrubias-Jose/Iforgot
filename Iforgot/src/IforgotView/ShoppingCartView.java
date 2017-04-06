@@ -5,6 +5,7 @@
  */
 package IforgotView;
 
+import AppController.ApplicationController;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -17,6 +18,14 @@ public class ShoppingCartView implements Serializable{
     public ShoppingCartView(){
         
     }
+    public String newOrOldCart(){
+        System.out.println("To start new list type: new"
+                            +"\nOr to use and old list type: old");
+        Scanner startingApp = new Scanner(System.in);
+        String choiceMade = startingApp.nextLine();
+        return choiceMade;
+    }
+    
     public String namingCart(){
         System.out.println("Name your list: ");
         Scanner nameList = new Scanner(System.in);

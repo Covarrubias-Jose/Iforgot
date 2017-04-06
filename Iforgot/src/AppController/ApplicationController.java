@@ -14,14 +14,9 @@ import IforgotView.ShoppingCartView;
  */
 public class ApplicationController {
     
-    public void start(){
+    public String start(){
     ShoppingCartView startApp = new ShoppingCartView();
-        startApp.newOrOldCart();
-    }
-//       @Override
-    public boolean doAction(String selection){// throws HowToMoveException {
-        
-        selection = selection.toUpperCase(); 
+        String selection = startApp.newOrOldCart().toUpperCase();
         
         switch (selection){
             case "NEW":
@@ -30,12 +25,11 @@ public class ApplicationController {
             case "OLD":
                 this.oldlist();
                 break;
-//            default:
-//               ErrorView.display("try again");
-//                break;
-               
+            default:
+                System.out.println("not valid");
+                break;
         }
-        return false;
+        return selection;
     }
     
     public void newlist(){

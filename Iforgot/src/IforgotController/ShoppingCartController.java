@@ -17,7 +17,8 @@ public class ShoppingCartController implements Serializable{
     
 
     public ShoppingCartController() {
-
+    }
+    public void newShoppingCart(){
         ShoppingCartModel loadCart = new ShoppingCartModel();
         ShoppingCartView ViewMycartName = new ShoppingCartView(); 
 
@@ -33,6 +34,20 @@ public class ShoppingCartController implements Serializable{
             ViewMycartName.ShoppingCartName(lista);
             ViewMycartName.ShoppingCartItem(cosa);
             ViewMycartName.ShoppingCartQuantity(cuanto);
-        }
+    }
+    
+    public void oldShoppingCart(){
+        ShoppingCartModel loadCart = new ShoppingCartModel();
+        ShoppingCartView ViewMycartName = new ShoppingCartView(); 
+        
+            loadCart.setItem(ViewMycartName.addingStuff());
+            String cosa=loadCart.getItem().toUpperCase();
+
+            loadCart.setHowMany(ViewMycartName.numOfItems());
+            int cuanto= loadCart.getHowMany();
+            
+            ViewMycartName.ShoppingCartItem(cosa);
+            ViewMycartName.ShoppingCartQuantity(cuanto);
+    }
     
 }
