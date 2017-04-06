@@ -2,7 +2,7 @@
  *
  */
 package iforgot;
-import IforgotController.ShoppingCartController;
+import AppController.ApplicationController;
 /**
  *
  * @author josecovarrubias
@@ -14,8 +14,8 @@ public class Iforgot {
      */
     public static void main(String[] args) {
 
-        ShoppingCartController cartModel = new ShoppingCartController();
-            
+        ApplicationController startApp = new ApplicationController();
+        startApp.start();
     }
     
 }
