@@ -16,8 +16,12 @@ public class ApplicationController {
     // This function will use the view model to solve the logic 
     // of what the controll model should do at the begining of the app.  
     public String start(){
-    ShoppingCartView startApp = new ShoppingCartView();
-        String selection = startApp.newOrOldCart().toUpperCase();
+        boolean valid = false;
+        String selection = null;
+        try{
+        while(!valid){
+        ShoppingCartView startApp = new ShoppingCartView();
+        selection = startApp.newOrOldCart().toUpperCase();
         
         switch (selection){
             case "NEW":
@@ -27,9 +31,13 @@ public class ApplicationController {
                 this.oldlist();
                 break;
             default:
-                System.out.println("not valid");
-                break;
+                System.out.println("not valid\n=====================");
+                
+        }break;
         }
+        }catch(Exception e){
+                System.out.println(e);
+                }
         return selection;
     }
     

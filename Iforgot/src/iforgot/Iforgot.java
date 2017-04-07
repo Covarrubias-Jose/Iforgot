@@ -3,6 +3,7 @@
  */
 package iforgot;
 import AppController.ApplicationController;
+import httpUrlConnection.IforgotHttpUrlConnection;
 /**
  *
  * @author josecovarrubias
@@ -17,6 +18,9 @@ public class Iforgot {
         // initial logic of the application.   
         ApplicationController startApp = new ApplicationController();
         startApp.start();
+        
+        IforgotHttpUrlConnection loadweb = new IforgotHttpUrlConnection();
+//            loadweb.loadToGit(startApp.start());
     }
     
 }
